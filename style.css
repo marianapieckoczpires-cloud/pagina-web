@@ -1,1 +1,93 @@
 
+/* Reset básico e espaçamento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+/* Flexbox para alinhar a galeria */
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap; /* Quebra a linha em telas menores */
+    justify-content: center; /* Centraliza os cards */
+    gap: 24px; /* Espaçamento entre os elementos */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Configurações de cada cartão */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-conteudo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+}
+
+.card-conteudo h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.card-conteudo p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+/* Botão e lógica visual do like */
+.btn-like {
+    background-color: #ffeff3;
+    border: 1px solid #ff6584;
+    color: #ff3b60;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+}
+
+.btn-like:hover {
+    background-color: #ff3b60;
+    color: white;
+}
+
+.btn-like.curtido {
+    background-color: #ff3b60;
+    color: white;
+}
